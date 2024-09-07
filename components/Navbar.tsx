@@ -50,7 +50,7 @@ export default function Navbar() {
   ]
 
   return (
-    <nav className='flex justify-between px-8 py-4 bg-black font-semibold '>
+    <nav className='flex justify-between px-8 py-4 bg-black text-white font-semibold '>
       <span className='font-bold text-xl '>KS Online Classes</span>
       <ul className='flex gap-4'>
         {navList.map((item) => (
