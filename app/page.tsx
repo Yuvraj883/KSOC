@@ -1,4 +1,5 @@
 import About from "@/components/About";
+import ExcelSection from "@/components/ExcelSection";
 import HeroSection from "@/components/HeroSection";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <>
     <HeroSection/>
     <About/>
+    <ExcelSection/>
     </>
   );
 }
