@@ -1,4 +1,5 @@
 "use client"
+import Image from 'next/image';
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 
@@ -50,11 +51,13 @@ export default function Navbar() {
   ]
 
   return (
-    <nav className='flex justify-between px-8 py-4 bg-black text-white font-semibold '>
-      <span className='font-bold text-xl '>KS Online Classes</span>
-      <ul className='flex gap-4'>
+    <nav className='flex justify-between items-center px-8 py-4 bg-transparent text-white font-semibold '>
+      <span className=''>
+        <Image src='/images/logo.png' className="" height={300} width={300} alt="logo"/>
+      </span>
+      <ul className='flex gap-4 text-lg'>
         {navList.map((item) => (
-          <li className={currentPath===item.path?'text-blue-500 cursor-pointer':'hover:text-blue-500 cursor-pointer'}>{item?.text}</li>
+          <li className={currentPath===item.path?'text-blue-500 cursor-pointer font-semibold':'hover:text-blue-500 cursor-pointer font-semibold'}>{item?.text}</li>
         ))}
       </ul>
     </nav>
