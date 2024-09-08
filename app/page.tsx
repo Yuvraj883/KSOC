@@ -1,3 +1,4 @@
+'use client'
 import About from "@/components/About";
 import ExcelSection from "@/components/ExcelSection";
 import HeroSection from "@/components/HeroSection";
