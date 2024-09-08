@@ -1,20 +1,18 @@
-"use client"
 import Image from 'next/image';
-import { useRouter } from 'next/router'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
 export default function Navbar() {
   const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true); // Ensures that the component is mounted client-side
-  }, []);
-
-  if (!mounted) {
-    return null; // Return null if rendering server-side to prevent router access
-  }
-
   // const router = useRouter();
+
+  // useEffect(() => {
+  //   setMounted(true); // Ensures that the component is mounted client-side
+  // }, []);
+
+  // if (!mounted) {
+  //   return null; // Return null if rendering server-side to prevent router access
+  // }
 
   const currentPath = '/about';
   const navList = [
@@ -48,18 +46,23 @@ export default function Navbar() {
       text: 'Team',
       icon: '',
     },
-  ]
+  ];
 
   return (
-    <nav className='flex justify-between items-center px-8 py-4 bg-transparent text-white font-semibold '>
-      <span className=''>
-        <Image src='/images/logo.png' className="" height={300} width={300} alt="logo"/>
+    <nav className='flex justify-between items-center px-8 py-4 bg-transparent text-white font-semibold'>
+      <span>
+        <Image src='/images/logo.png ' className='h-20 w-full' height={80} width={80} alt='logo' />
       </span>
-      <ul className='flex gap-4 text-lg'>
+      <ul className='hidden md:flex gap-4 text-lg'>
         {navList.map((item) => (
-          <li className={currentPath===item.path?'text-blue-500 cursor-pointer font-semibold':'hover:text-blue-500 cursor-pointer font-semibold'}>{item?.text}</li>
+          <li
+            key={item.path}
+            className={`cursor-pointer font-semibold ${currentPath === item.path ? 'text-blue-500' : 'hover:text-blue-500'}`}
+          >
+            {item.text}
+          </li>
         ))}
       </ul>
     </nav>
-  )
+  );
 }
