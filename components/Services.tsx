@@ -33,10 +33,10 @@ const services: Service[] = [
 
     <div>
       <span className='flex flex-col justify-center items-center'>
-      <h1 className='text-6xl'>Services</h1>
-    <hr></hr>
+      <h1 className='text-6xl text-[#EDEADE] font-bold'>Services</h1>
+    <hr className='w-[40%] h-4 '></hr>
       </span>
-      <div className='flex items-center justify-center gap-6'>
+      <div className='flex items-center justify-center gap-6 p-4 mb-4'>
         {
           services.map((service)=>(
             <ServiceCard service = {service}/>
