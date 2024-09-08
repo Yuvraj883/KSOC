@@ -51,7 +51,7 @@ export default function Navbar() {
   return (
     <nav className='flex justify-between items-center px-8 py-4 bg-transparent text-white font-semibold'>
       <span>
-        <Image src='/images/logo.png ' className='h-20 w-full' height={80} width={80} alt='logo' />
+        <Image src='/images/logo.png' className='h-20 w-full' height={80} width={80} alt='logo' />
       </span>
       <ul className='hidden md:flex gap-4 text-lg'>
         {navList.map((item) => (
